@@ -1,0 +1,186 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Start Header */
+
+.container {
+    padding: 15px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 9999999;
+}
+
+header .container {
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+header .container h1 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+ul li a:hover {
+    border-bottom: 1px solid white;
+}
+
+/* End Header */
+/* Start Section 1 */
+
+section {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#section-1 {
+    background-color: #EEE;
+}
+
+#section-2 ,
+#section-4 {
+    background-color: #EFF3F6;
+    align-items: flex-end; 
+}
+
+#section-2 h1 , #section-4 h1 {
+    text-align: end;
+}
+
+#section-3 {
+    background-color: #D5D8DD;
+}
+
+section h1 {
+    font-size: 48px;
+    color: #171949;
+}
+
+section p {
+    max-width: 700px;
+    line-height: 1.6;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* End Section 1 */
+
+.active {
+    animation: activeState 1s linear ;
+    position: relative;
+}
+
+.active::after {
+    content : '';
+    width: 500px;
+    height: 500px;
+    background-color: rgb(92, 88, 88);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    opacity: .1;
+    animation: afterActiveState 7.5s alternate infinite;
+}
+
+.active::before {
+    content : '';
+    width: 200px;
+    height: 200px;
+    background-color: #bcbdc0;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: .4;
+    animation: beforeActiveState 7.5s alternate infinite;
+}
+
+@keyframes beforeActiveState {
+    to {
+        right: 20%;
+        bottom: -10%;
+    }
+}
+
+@keyframes afterActiveState {
+    to {
+        left: 20%;
+        top: 10%;
+    }
+}
+
+/* Start Comments */
+
+#comments-6 {
+    background-color: #D5D8DD;
+}
+
+.comment {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.comment p {
+    font-size: 16px;
+}
+
+.comment .email h4 , .email p {
+    margin: 0;
+}
+
+#comments-6 fieldset {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#comments-6 fieldset .your-comment {
+    display: flex;
+    flex-direction: column;
+}
+
+#comments-6 fieldset button {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#comments-6 fieldset button:hover {
+    opacity: .5;
+}
+
+/* End Comments */
