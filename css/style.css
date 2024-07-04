@@ -159,6 +159,11 @@ section p {
     margin: 0;
 }
 
+.user-form {
+    padding: 10px;
+
+}
+
 #comments-6 fieldset {
     display: flex;
     align-items: flex-start;
@@ -181,6 +186,15 @@ section p {
 
 #comments-6 fieldset button:hover {
     opacity: .5;
+}
+
+.err {
+    color: red;
+    font-size: 12px;
+}
+
+.hide {
+    display: none;
 }
 
 /* End Comments */
