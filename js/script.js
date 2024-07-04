@@ -63,6 +63,8 @@ const nameInputError = document.querySelector(".name-error");
 const emailInputError = document.querySelector(".email-error");
 const commentInputError = document.querySelector(".comment-error");
 
+const emailValidation = /\w+@/
+
 // handling submitting the comment
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -83,8 +85,11 @@ form.addEventListener("submit", function (e) {
   } else {
     commentInputError.classList.add("hide");
   }
+  if (!emailValidation.test(emailInput.value)) {
+    emailInputError.classList.remove("hide")
+  }
   // handling when all the inputs are valid
-  if (nameInput.value !== "" && emailInput.value !== "" && commentInput.value !== "") {
+  if (nameInput.value !== "" && emailInput.value !== "" && emailValidation.test(emailInput.value) && commentInput.value !== "") {
     createComment();
   }
 });
